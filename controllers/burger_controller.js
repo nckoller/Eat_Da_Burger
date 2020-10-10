@@ -1,12 +1,12 @@
-import express from 'express';
-import burger from './models/burger.js';
+const express = require('express');
+const burger = require('../models/burger');
 
 const router = express.Router();
 // Display all burgers from the db
 router.get('/', function (req, res) {
   burger.all(function (data) {
     const handlebarsObj = {
-      cats: data,
+      burgers: data,
     };
     console.log(handlebarsObj);
     res.render('index', handlebarsObj);
