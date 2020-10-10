@@ -2,7 +2,7 @@ import express from 'express';
 import burger from './models/burger.js';
 
 const router = express.Router();
-
+// Display all burgers from the db
 router.get('/', function (req, res) {
   burger.all(function (data) {
     const handlebarsObj = {
@@ -12,7 +12,7 @@ router.get('/', function (req, res) {
     res.render('index', handlebarsObj);
   });
 });
-
+// Add a new burger to the db
 router.post('/api/burgers', function (req, res) {
   burger.create(
     ['burger_name', 'devoured'],
@@ -22,7 +22,7 @@ router.post('/api/burgers', function (req, res) {
     }
   );
 });
-
+// Change devoured status to true
 router.put('/api/burgers/:id', function (req, res) {
   var condition = 'id = ' + req.params.id;
 
