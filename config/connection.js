@@ -3,7 +3,7 @@ const mysql = require('mysql');
 
 // User JAWSDB if Heroku detects it, otherwise use localhost
 if (process.env.JAWSDB_URL) {
-  const connection = mysql.createConnection(process.env.JAWSDB_URL);
+  var connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
   connection = mysql.createConnection({
     host: 'localhost',
