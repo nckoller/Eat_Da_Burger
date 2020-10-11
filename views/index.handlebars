@@ -2,9 +2,10 @@
     {{!-- HEADER --}}
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1 class="display-4 text-center">Eat Da Burger!</h1>
-            <img src="https://img.pngio.com/free-download-hamburger-cheeseburger-hot-dog-veggie-burger-cartoon-burger-cartoon-png-260_220.jpg"
-                alt="Free download Hamburger Cheeseburger Hot dog Veggie burger Cartoon ...">
+            <h1 id="header" class="display-4 text-center">Eat Dat Burger!</h1>
+            
+            <img class="burger-image" src="http://www.pngmart.com/files/5/Hamburger-PNG-Pic.png">
+                
         </div>
     </div>
     <div class="row">
@@ -19,11 +20,12 @@
 
                     <form action="/api/burgers?_method=POST" method="POST">
 
-                        <button class="btn btn-outline-secondary" type="submit">Add</button>
+                        
 
                         <input type="text" class="form-control" id="name" name="burger_name"
                             placeholder="New Burger Name" aria-label="Example text with button addon"
                             aria-describedby="button-addon1">
+                            <button class="btn btn-warning btn-block" type="submit">Add</button>
                     </form>
 
                 </div>
@@ -36,12 +38,12 @@
                 <div class="card-header">
                     <h2 class="card-title">Ready To Eat</h2>
                 </div>
-                <div class="card-body">
+                <div id="ready-burger" class="card-body text-left">
                     {{#each burgers}}
                     {{#unless this.devoured}}
                     <form action="/api/burgers/{{this.id}}?_method=PUT" method="POST">
                         {{this.burger_name}}
-                        <button type="submit" class="btn btn-warning">EAT ME!</button>
+                        <button type="submit" id="eat" class="btn btn-warning">EAT ME!</button>
                     </form>
 
                     {{/unless}}
@@ -57,7 +59,7 @@
                         Devoured
                     </h2>
                 </div>
-                <div class="card-body">
+                <div class="card-body text-center">
                     {{#each burgers}}
                     {{#if devoured}}
                     <ul class="list-unstyled">

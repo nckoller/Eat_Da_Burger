@@ -1,3 +1,27 @@
 .card-title {
 text-align: center;
 }
+
+.burger-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+  }
+
+  #header {
+    font-family: 'Fugaz One', cursive;
+  }
+  .card-title {
+    font-family: 'Fugaz One', cursive;
+  }
+
+  #eat {
+    margin-right: 10px;
+    float: right;
+  }
+
+#ready-burger {
+    margin-left: 10px;
+}
+
