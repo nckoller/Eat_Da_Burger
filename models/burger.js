@@ -1,6 +1,7 @@
 const orm = require('../config/orm');
 
 const burger = {
+  // display all burgers
   all: function (cb) {
     orm.all('burgers', function (res) {
       cb(res);

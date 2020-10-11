@@ -16,17 +16,18 @@ function objToSql(obj) {
 
   // loop through the keys and push the key/value pairs to SQL syntax
   for (var key in obj) {
-    var value = ob[key];
+    var value = obj[key];
     // check to skip hidden properties
     if (Object.hasOwnProperty.call(obj, key)) {
       // if string with spaces, add quotations
       if (typeof value === 'string' && value.indexOf(' ') >= 0) {
         value = "'" + value + "'";
       }
-      arr.push(key + '=' + value);
+      arr.push(key + ' = ' + value);
     }
   }
   // translate array of strings to a single comma-separated string
+
   return arr.toString();
 }
 
@@ -70,12 +71,15 @@ var orm = {
     queryString += objToSql(objColVals);
     queryString += ' WHERE ';
     queryString += condition;
+    queryString += ';';
 
-    console.log(queryString, function (err, result) {
+    connection.query(queryString, function (err, result) {
+      console.log("update", queryString)
       if (err) {
+        console.log(err)
         throw err;
       }
-
+      console.log("result", result);
       cb(result);
     });
   },

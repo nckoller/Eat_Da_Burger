@@ -1,4 +1,5 @@
 const express = require('express');
+const methodOveride = require('method-override');
 
 const PORT = process.env.PORT || 8080;
 
@@ -13,6 +14,7 @@ app.use(express.json());
 // Set Handlebars
 const expressHandlebars = require('express-handlebars');
 
+app.use(methodOveride('_method'));
 app.engine('handlebars', expressHandlebars({ defaultLayout: 'main' })); //double check this
 app.set('view engine', 'handlebars');
 
