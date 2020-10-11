@@ -1,27 +1,47 @@
-.card-title {
-text-align: center;
+
+html, body {
+    min-height: 100%;
+    background-color: #A3320B;
+}
+#body {
+    background-color: #A3320B;
+}
+.burger-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 25%;
 }
 
-.burger-image {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 25%;
-  }
+#header {
+    background-color: #241023;
+}
+#header-text {
+  font-family: 'Fugaz One', cursive;
+  text-align: center;
+  color: #A3320B;
+}
 
-  #header {
-    font-family: 'Fugaz One', cursive;
-  }
-  .card-title {
-    font-family: 'Fugaz One', cursive;
-  }
+#card-header {
+   background-color: #ECA72C;
+}
+.card-title {
+  font-family: 'Fugaz One', cursive;
+  text-align: center;
+  color: #241023;
+  background-color: #ECA72C;
+}
 
-  #eat {
-    margin-right: 10px;
-    float: right;
-  }
+.card-body {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 30px;
+}
+
+#eat {
+  margin-right: 10px;
+  float: right;
+}
 
 #ready-burger {
-    margin-left: 10px;
+  margin-left: 10px;
 }
-

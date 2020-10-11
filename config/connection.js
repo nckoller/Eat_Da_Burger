@@ -1,5 +1,5 @@
 const mysql = require('mysql');
-// const { user, password } = require('./config');
+const { user, password } = require('./config');
 
 // User JAWSDB if Heroku detects it, otherwise use localhost
 if (process.env.JAWSDB_URL) {
@@ -10,9 +10,9 @@ if (process.env.JAWSDB_URL) {
     // Your port if not 3306
     port: 3306,
     // Your username
-    user: "root",
+    user: user,
     // Your password
-    password: "DUmn612Hcd",
+    password: password,
     database: 'burgers_db',
   });
 }
